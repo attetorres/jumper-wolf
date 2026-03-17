@@ -5,10 +5,51 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
 	"uniqueId": "1je1zojwq7x",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Background",
+			"TiledBackground",
+			"Wolf",
+			"Keyboard"
+		],
 		"subfolders": []
 	},
 	"functionsName": "Functions",
@@ -39,22 +80,6 @@
 					"sid": 408938297119190,
 					"script-info": {
 						"purpose": "main"
-					}
-				},
-				{
-					"name": "Player.js",
-					"type": "application/javascript",
-					"sid": 972195088774743,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "Enemy.js",
-					"type": "application/javascript",
-					"sid": 629894632880504,
-					"script-info": {
-						"purpose": "none"
 					}
 				}
 			],
