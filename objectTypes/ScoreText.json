@@ -1,0 +1,16 @@
+{
+	"name": "ScoreText",
+	"plugin-id": "Text",
+	"sid": 456836677747162,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 463291750940356
+		}
+	],
+	"effectTypes": []
+}
