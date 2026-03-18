@@ -197,6 +197,20 @@
 					],
 					"actions": [
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 278712470020110,
+							"parameters": {
+								"audio-file": {
+									"path": "coin"
+								},
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "Coin",
 							"sid": 421195489145055
