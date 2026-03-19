@@ -1,0 +1,165 @@
+runOnStartup(async runtime => {
+    const CONFIG = {
+        skeleton: {
+            patrolSpeed: 1,
+            chaseSpeed: 1.2,
+            detectionRange: 150,
+            attackRange: 50,
+            patrolWidth: 200,
+            attackCooldown: 1000,
+            deathAnimationTime: 60,
+            health: 3
+        },
+        evilEye: {
+            floatSpeed: 0.05,
+            floatAmplitude: 20,
+            chaseSpeed: 1,
+            detectionRange: 200,
+            health: 1
+        }
+    };
+
+    const enemyState = new Map();
+
+    runtime.addEventListener('tick', () => {
+        const wolf = runtime.objects.Wolf?.getFirstInstance();
+        if (!wolf) return;
+
+        const skeletons = runtime.objects.Skeleton?.getAllInstances() || [];
+        skeletons.forEach(skeleton => processSkeleton(skeleton, wolf, CONFIG.skeleton, enemyState));
+
+        const Eyeball = runtime.objects.Eyeball?.getAllInstances() || [];
+        Eyeball.forEach(eye => processEvilEye(eye, wolf, CONFIG.evilEye, enemyState));
+    });
+});
+
+function processSkeleton(skeleton, wolf, config, enemyState) {
+    if (!enemyState.has(skeleton)) {
+        enemyState.set(skeleton, {
+            mode: 'idle',
+            direction: 1,
+            lastAttack: 0,
+            health: config.health,
+            spawnX: skeleton.x,
+            deathTimer: 0
+        });
+    }
+    
+    const state = enemyState.get(skeleton);
+    const now = Date.now();
+    
+    if (state.health <= 0) {
+        state.mode = 'dead';
+        skeleton.instVars.State = 'dead';
+        
+        state.deathTimer++;
+        if (state.deathTimer > config.deathAnimationTime) {
+            skeleton.destroy();
+            enemyState.delete(skeleton);
+        }
+        return;
+    }
+    
+    const wolfAbove = wolf.dy > 0 && 
+                      Math.abs(skeleton.x - wolf.x) < 50 && 
+                      Math.abs(skeleton.y - wolf.y) < 60;
+    
+    if (wolfAbove) {
+        state.health--;
+        wolf.dy = -400;
+        return;
+    }
+
+    const distX = Math.abs(skeleton.x - wolf.x);
+    const distY = Math.abs(skeleton.y - wolf.y);
+    const canSeeWolf = distX < config.detectionRange && distY < 150;
+
+    if (state.mode === 'attack' && distX > config.attackRange + 20) {
+        state.mode = canSeeWolf ? 'chase' : 'patrol';
+        skeleton.instVars.State = 'walk';
+    }
+
+    if (distX < config.attackRange && distY < 80 && state.mode !== 'dead') {
+        state.mode = 'attack';
+        skeleton.instVars.State = 'attack';
+        
+        if (now - state.lastAttack > config.attackCooldown) {
+            state.lastAttack = now;
+            wolf.instVars.Life -= 1;
+            
+            if (wolf.instVars.Life <= 0) {
+                wolf.destroy();
+            }
+        }
+        return;
+    }
+    
+    if (canSeeWolf && state.mode !== 'dead' && state.mode !== 'attack') {
+        state.mode = 'chase';
+        skeleton.instVars.State = 'walk';
+        
+        if (skeleton.x < wolf.x) {
+            skeleton.x += config.chaseSpeed;
+            state.direction = 1;
+        } else {
+            skeleton.x -= config.chaseSpeed;
+            state.direction = -1;
+        }
+        return;
+    }
+    
+    if (!canSeeWolf && state.mode !== 'dead' && state.mode !== 'attack') {
+        if (state.mode !== 'patrol') {
+            state.mode = 'patrol';
+            skeleton.instVars.State = 'walk';
+        }
+        
+        skeleton.x += config.patrolSpeed * state.direction;
+        
+        if (skeleton.x > state.spawnX + config.patrolWidth) {
+            state.direction = -1;
+        } else if (skeleton.x < state.spawnX - config.patrolWidth) {
+            state.direction = 1;
+        }
+    }
+}
+
+function processEvilEye(eye, wolf, config, enemyState) {
+    if (!enemyState.has(eye)) {
+        enemyState.set(eye, {
+            floatOffset: Math.random() * 100,
+            health: config.health,
+            spawnX: eye.x,
+            spawnY: eye.y
+        });
+    }
+    
+    const state = enemyState.get(eye);
+    
+    state.floatOffset += config.floatSpeed;
+    eye.y = state.spawnY + Math.sin(state.floatOffset) * config.floatAmplitude;
+    
+    const distToWolf = Math.abs(eye.x - wolf.x);
+    
+    if (distToWolf < config.detectionRange) {
+        if (eye.x < wolf.x) {
+            eye.x += config.chaseSpeed;
+        } else {
+            eye.x -= config.chaseSpeed;
+        }
+    } else {
+        if (Math.abs(eye.x - state.spawnX) > 5) {
+            if (eye.x < state.spawnX) eye.x += config.chaseSpeed;
+            else eye.x -= config.chaseSpeed;
+        }
+    }
+
+    if (eye.testOverlap(wolf)) {
+        wolf.instVars.Life -= 1;
+        eye.destroy();
+        
+        if (wolf.instVars.Life <= 0) {
+            wolf.destroy();
+        }
+    }
+}

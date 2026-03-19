@@ -3,7 +3,7 @@
 	"savedWithRelease": 47602,
 	"name": "jumper-wolf",
 	"runtime": "c3",
-	"useWorker": "auto",
+	"useWorker": "dom",
 	"bundleAddons": false,
 	"usedAddons": [
 		{
@@ -42,6 +42,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
@@ -52,6 +59,13 @@
 			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -77,10 +91,13 @@
 			"TiledBackground",
 			"Wolf",
 			"Keyboard",
-			"TiledGround",
 			"Coin",
 			"ScoreText",
-			"Audio"
+			"Audio",
+			"Tilemap",
+			"Chicken",
+			"Eyeball",
+			"Skeleton"
 		],
 		"subfolders": []
 	},
@@ -112,6 +129,14 @@
 					"sid": 763180791830797,
 					"script-info": {
 						"purpose": "main"
+					}
+				},
+				{
+					"name": "Enemies.js",
+					"type": "application/javascript",
+					"sid": 352619842660814,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],

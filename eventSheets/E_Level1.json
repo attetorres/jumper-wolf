@@ -251,6 +251,230 @@
 				}
 			],
 			"sid": 729136370626840
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemies Animations",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 124693807962425
+						}
+					],
+					"actions": [],
+					"sid": 172877264046322,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Skeleton",
+									"sid": 454996800060594,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"idle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Skeleton",
+									"sid": 819956212834426,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 565108858129750
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Skeleton",
+									"sid": 309704476181218,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"walk\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Skeleton",
+									"sid": 872354367398827,
+									"parameters": {
+										"animation": "\"Walking\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 332475963062058
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Skeleton",
+									"sid": 754890292957253,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"attack\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Skeleton",
+									"sid": 339161710397000,
+									"parameters": {
+										"animation": "\"Attack\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 849628047242319
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Skeleton",
+									"sid": 868841970001122,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"dead\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Skeleton",
+									"sid": 966775788549219,
+									"parameters": {
+										"animation": "\"Death\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 951943297083226
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Skeleton",
+									"sid": 140455634018764,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Wolf.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Skeleton",
+									"sid": 931368313323425,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 698004256904112
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 276129565084631
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Skeleton",
+									"sid": 842439378983051,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 151645015548801
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Eyeball",
+									"sid": 468267408746074,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Wolf.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Eyeball",
+									"sid": 852405226472357,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 151869693037813
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 239671014047559
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Eyeball",
+									"sid": 476801920576667,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 263930438873657
+						}
+					]
+				}
+			],
+			"sid": 276873675453540
 		}
 	],
 	"sid": 972559811571951
