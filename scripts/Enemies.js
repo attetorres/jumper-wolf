@@ -65,8 +65,9 @@ function processSkeleton(skeleton, wolf, config, enemyState) {
     const canSeeWolf = distX < config.detectionRange && distY < 150;
 
     if (state.mode === 'attack' && distX > config.attackRange + 20) {
-        state.mode = canSeeWolf ? 'chase' : 'patrol';
-        skeleton.instVars.State = 'walk';
+        state.mode = canSeeWolf ? 'chase' : 'idle';
+        skeleton.instVars.State = state.mode === 'chase' ? 'walk' : 'idle';
+        if (state.mode === 'idle') skeleton.dx = 0;
     }
 
     if (distX < config.attackRange && distY < 80 && state.mode !== 'dead') {
@@ -101,6 +102,15 @@ function processSkeleton(skeleton, wolf, config, enemyState) {
     }
     
     if (!canSeeWolf && state.mode !== 'dead' && state.mode !== 'attack') {
+        if (distX > config.detectionRange + 50) {
+            if (state.mode !== 'idle') {
+                state.mode = 'idle';
+                skeleton.instVars.State = 'idle';
+                skeleton.dx = 0;
+            }
+            return;
+        }
+        
         if (state.mode !== 'patrol') {
             state.mode = 'patrol';
             skeleton.instVars.State = 'walk';
@@ -122,14 +132,15 @@ function processEvilEye(eye, wolf, config, enemyState) {
             floatOffset: Math.random() * 100,
             health: config.health,
             spawnX: eye.x,
-            spawnY: eye.y
+            spawnY: eye.y,
+            lastDamage: 0
         });
     }
     
-    const state = enemyState.get(eye);
+    const data = enemyState.get(eye);
     
-    state.floatOffset += config.floatSpeed;
-    eye.y = state.spawnY + Math.sin(state.floatOffset) * config.floatAmplitude;
+    data.floatOffset += config.floatSpeed;
+    eye.y = data.spawnY + Math.sin(data.floatOffset) * config.floatAmplitude;
     
     const distToWolf = Math.abs(eye.x - wolf.x);
     
@@ -140,18 +151,23 @@ function processEvilEye(eye, wolf, config, enemyState) {
             eye.x -= config.chaseSpeed;
         }
     } else {
-        if (Math.abs(eye.x - state.spawnX) > 5) {
-            if (eye.x < state.spawnX) eye.x += config.chaseSpeed;
+        if (Math.abs(eye.x - data.spawnX) > 5) {
+            if (eye.x < data.spawnX) eye.x += config.chaseSpeed;
             else eye.x -= config.chaseSpeed;
         }
     }
 
-    if (eye.testOverlap(wolf)) {
+    const now = Date.now();
+    if (eye.testOverlap(wolf) && now - data.lastDamage > 1000) {
+        data.lastDamage = now;
         wolf.instVars.Life -= 1;
-        eye.destroy();
         
         if (wolf.instVars.Life <= 0) {
             wolf.destroy();
         }
+        
+        const direction = eye.x < wolf.x ? -1 : 1;
+        wolf.x += direction * 20;
+        wolf.dy = -300;
     }
 }
