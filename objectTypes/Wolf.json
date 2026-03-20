@@ -11,6 +11,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 735486275487717
+		},
+		{
+			"name": "Mirrored",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 950103957804588
 		}
 	],
 	"behaviorTypes": [

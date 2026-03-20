@@ -11,6 +11,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 493347413303115
+		},
+		{
+			"name": "Life",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 917250448773744
 		}
 	],
 	"behaviorTypes": [

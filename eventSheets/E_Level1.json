@@ -12,6 +12,26 @@
 			"sid": 785110156580128
 		},
 		{
+			"eventType": "variable",
+			"name": "ShootY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 571397153121938
+		},
+		{
+			"eventType": "variable",
+			"name": "ShootX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 881509038605093
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Wolf Animations & Controls",
@@ -50,6 +70,15 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Wolf",
+							"sid": 381546931714883,
+							"parameters": {
+								"instance-variable": "Mirrored",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 169294031288588
@@ -84,6 +113,15 @@
 							"parameters": {
 								"control": "left"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Wolf",
+							"sid": 673136167099679,
+							"parameters": {
+								"instance-variable": "Mirrored",
+								"value": "1"
+							}
 						}
 					],
 					"sid": 265361671327691
@@ -108,6 +146,15 @@
 							"parameters": {
 								"animation": "\"IdleLeft\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Wolf",
+							"sid": 120493971962621,
+							"parameters": {
+								"instance-variable": "Mirrored",
+								"value": "1"
 							}
 						}
 					],
@@ -143,6 +190,15 @@
 							"parameters": {
 								"control": "right"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Wolf",
+							"sid": 397461895227325,
+							"parameters": {
+								"instance-variable": "Mirrored",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 195808483479369
@@ -167,6 +223,15 @@
 							"parameters": {
 								"animation": "\"IdleRight\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Wolf",
+							"sid": 957285891254640,
+							"parameters": {
+								"instance-variable": "Mirrored",
+								"value": "0"
 							}
 						}
 					],
@@ -640,6 +705,259 @@
 				}
 			],
 			"sid": 570745646880837
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 676746552649614,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 420733153259189,
+					"parameters": {
+						"variable": "ShootX",
+						"value": "Wolf.X"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 935265823493638,
+					"parameters": {
+						"variable": "ShootY",
+						"value": "Wolf.Y"
+					}
+				}
+			],
+			"sid": 699112207107241,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Wolf",
+							"sid": 738866588379980,
+							"parameters": {
+								"instance-variable": "Mirrored",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 961712108928908,
+							"parameters": {
+								"object-to-create": "Fireball",
+								"layer": "0",
+								"x": "ShootX+50",
+								"y": "ShootY",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Fireball",
+							"sid": 234151124390759,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "500"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Fireball",
+							"sid": 678367198950443,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "0"
+							}
+						}
+					],
+					"sid": 248914666917219
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Wolf",
+							"sid": 194452278729552,
+							"parameters": {
+								"instance-variable": "Mirrored",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 463552713659282,
+							"parameters": {
+								"object-to-create": "Fireball",
+								"layer": "0",
+								"x": "ShootX-50",
+								"y": "ShootY",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Fireball",
+							"sid": 891009447156932,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Fireball",
+							"sid": 230680586748504,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "500"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Fireball",
+							"sid": 773059549702295,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "180"
+							}
+						}
+					],
+					"sid": 543226252851890
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 664286239769764
+				}
+			],
+			"actions": [],
+			"sid": 593158788190671,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Fireball",
+							"sid": 795834939739528,
+							"parameters": {
+								"object": "Eyeball"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Fireball",
+							"sid": 473176893005432
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Eyeball",
+							"sid": 132456452148424
+						}
+					],
+					"sid": 888743574786403
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Fireball",
+							"sid": 188435556744507,
+							"parameters": {
+								"object": "Skeleton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Fireball",
+							"sid": 338770210048005
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Skeleton",
+							"sid": 229532268580309,
+							"parameters": {
+								"instance-variable": "Life",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 595374742231242
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Skeleton",
+							"sid": 238853856338132,
+							"parameters": {
+								"instance-variable": "Life",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Skeleton",
+							"sid": 584019461552216
+						}
+					],
+					"sid": 167588748165503
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Fireball",
+					"sid": 297395342316105
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Fireball",
+					"sid": 104495958919260
+				}
+			],
+			"sid": 820126909013983
 		}
 	],
 	"sid": 972559811571951
