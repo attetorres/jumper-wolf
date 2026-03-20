@@ -37,7 +37,7 @@ function processSkeleton(skeleton, wolf, config, enemyState) {
     if (!enemyState.has(skeleton)) {
         enemyState.set(skeleton, {
             mode: 'idle',
-            direction: 1,
+            direction: 0,
             lastAttack: 0,
             health: config.health,
             spawnX: skeleton.x,
@@ -59,16 +59,6 @@ function processSkeleton(skeleton, wolf, config, enemyState) {
         }
         return;
     }
-    
-    const wolfAbove = wolf.dy > 0 && 
-                      Math.abs(skeleton.x - wolf.x) < 50 && 
-                      Math.abs(skeleton.y - wolf.y) < 60;
-    
-    if (wolfAbove) {
-        state.health--;
-        wolf.dy = -400;
-        return;
-    }
 
     const distX = Math.abs(skeleton.x - wolf.x);
     const distY = Math.abs(skeleton.y - wolf.y);
@@ -83,7 +73,9 @@ function processSkeleton(skeleton, wolf, config, enemyState) {
         state.mode = 'attack';
         skeleton.instVars.State = 'attack';
         
-        if (now - state.lastAttack > config.attackCooldown) {
+        const totalFrames = 8;
+        
+        if (skeleton.animationFrame === totalFrames - 1 && now - state.lastAttack > config.attackCooldown) {
             state.lastAttack = now;
             wolf.instVars.Life -= 1;
             

@@ -475,6 +475,171 @@
 				}
 			],
 			"sid": 276873675453540
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Life",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 434397458303455
+						}
+					],
+					"actions": [],
+					"sid": 751264786231255,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Wolf",
+									"sid": 222063600585293,
+									"parameters": {
+										"instance-variable": "Life",
+										"comparison": 5,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Heart",
+									"sid": 578149078374917,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 631557296634022
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 373721152872928
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Heart",
+									"sid": 421990003483972,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 754541894375857
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Wolf",
+									"sid": 975876749488470,
+									"parameters": {
+										"instance-variable": "Life",
+										"comparison": 5,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Heart2",
+									"sid": 366609993514542,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 354451552305650
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 629816558391086
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Heart2",
+									"sid": 550350878127565,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 663042686931738
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Wolf",
+									"sid": 333401263664610,
+									"parameters": {
+										"instance-variable": "Life",
+										"comparison": 5,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Heart3",
+									"sid": 151756990944893,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 604344005756190
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 402571125943877
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Heart3",
+									"sid": 375022425752732,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 361038537102936
+						}
+					]
+				}
+			],
+			"sid": 570745646880837
 		}
 	],
 	"sid": 972559811571951
