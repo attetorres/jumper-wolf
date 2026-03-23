@@ -293,6 +293,83 @@
 						}
 					],
 					"sid": 140949818636744
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Wolf",
+							"sid": 962299055062223,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "LayoutHeight+50"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 195105115881374,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Wolf",
+									"sid": 244885699851482,
+									"parameters": {
+										"instance-variable": "IsDead",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Wolf",
+									"sid": 431374209776008,
+									"parameters": {
+										"instance-variable": "IsDead",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Wolf",
+									"sid": 376722233079918,
+									"parameters": {
+										"instance-variable": "Life",
+										"value": "0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 379456269874975,
+									"parameters": {
+										"audio-file": {
+											"path": "WolfDeath"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 481647191495831,
+									"disabled": true,
+									"parameters": {
+										"layout": "GameOver"
+									}
+								}
+							],
+							"sid": 901548212605942
+						}
+					]
 				}
 			],
 			"sid": 729136370626840

@@ -18,6 +18,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 950103957804588
+		},
+		{
+			"name": "IsDead",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 140957169919635
 		}
 	],
 	"behaviorTypes": [

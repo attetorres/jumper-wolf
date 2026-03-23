@@ -310,7 +310,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"Life": 3,
-						"Mirrored": 0
+						"Mirrored": 0,
+						"IsDead": 0
 					},
 					"behaviors": {
 						"Platform": {

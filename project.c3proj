@@ -114,13 +114,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Level1"
+			"Level1",
+			"GameOver"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"E_Level1"
+			"E_Level1",
+			"E_GameOver"
 		],
 		"subfolders": []
 	},
@@ -184,6 +186,14 @@
 					"name": "SkeletonHit.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 816945625966340,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "WolfDeath.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 991045615893732,
 					"file-info": {
 						"purpose": "none"
 					}
