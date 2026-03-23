@@ -71,6 +71,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -101,7 +108,8 @@
 			"Heart",
 			"Heart2",
 			"Heart3",
-			"Fireball"
+			"Fireball",
+			"PopText"
 		],
 		"subfolders": []
 	},
@@ -194,6 +202,14 @@
 					"name": "WolfDeath.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 991045615893732,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Eating.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 358572367603682,
 					"file-info": {
 						"purpose": "none"
 					}

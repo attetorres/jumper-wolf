@@ -370,6 +370,135 @@
 							"sid": 901548212605942
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Wolf",
+							"sid": 366623258167708,
+							"parameters": {
+								"object": "Chicken"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 984560676831346,
+							"parameters": {
+								"audio-file": {
+									"path": "Eating"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Chicken",
+							"sid": 982173898329411
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 138017560651904,
+							"parameters": {
+								"variable": "Score",
+								"value": "10"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 723836883900841,
+							"parameters": {
+								"text": "\"SCORE:  \" &Score"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 514162963712833,
+							"parameters": {
+								"object-to-create": "PopText",
+								"layer": "1",
+								"x": "Chicken.X+20",
+								"y": "Chicken.Y+10",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "PopText",
+							"sid": 323853377799932,
+							"parameters": {
+								"text": "\"+10\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "PopText",
+							"sid": 686122452956200,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "PopText",
+							"sid": 267866528199860,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "PopText",
+							"sid": 653645168328104,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "Chicken.Y+50",
+								"time": "0.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 199337250823285,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "PopText",
+							"sid": 206742403536500
+						}
+					],
+					"sid": 505987968903769
 				}
 			],
 			"sid": 729136370626840

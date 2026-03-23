@@ -1,0 +1,16 @@
+{
+	"name": "PopText",
+	"plugin-id": "Text",
+	"sid": 249888360906990,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 876817784360677
+		}
+	],
+	"effectTypes": []
+}
