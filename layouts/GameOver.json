@@ -5,7 +5,98 @@
 			"name": "Layer 0",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "exteriorparallaxBG",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 59,
+					"sid": 127651240099677,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 127651240099677,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 322,
+						"y": 227,
+						"width": 679.3422281070194,
+						"height": 489.2566710802646,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.792156862745098,
+							0.10980392156862745,
+							0.1411764705882353,
+							0.8
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "GameOverText",
+					"properties": {
+						"text": "GAME OVER\n\nYOU'VE BEEN DEFEATED BY THE CREATURES\n\nPRESS F TO PLAY AGAIN",
+						"enable-bbcode": true,
+						"font": "fantasy",
+						"size": 21,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.5137254901960784,
+							0.6862745098039216,
+							0.19215686274509805,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 60,
+					"sid": 566648913809284,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 566648913809284,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 78,
+						"y": 129,
+						"width": 489,
+						"height": 183,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				}
+			],
 			"sid": 269573718149205,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

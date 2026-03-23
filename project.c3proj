@@ -116,7 +116,8 @@
 			"Confeti",
 			"exteriorparallaxBG",
 			"FinalScoreText",
-			"FinaMssg"
+			"FinaMssg",
+			"GameOverText"
 		],
 		"subfolders": []
 	},
