@@ -130,10 +130,10 @@
 	},
 	"layouts": {
 		"items": [
-			"Level1",
-			"GameOver",
 			"Title",
-			"Win"
+			"Level1",
+			"Win",
+			"GameOver"
 		],
 		"subfolders": []
 	},
