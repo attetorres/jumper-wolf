@@ -155,6 +155,38 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Explosion.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 344552825927341,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MonsterDeath.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 134575619835686,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SkeletonDeath.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 599131694184644,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SkeletonHit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 816945625966340,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []

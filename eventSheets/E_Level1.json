@@ -745,6 +745,20 @@
 							"parameters": {
 								"angle": "0"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 392913686059006,
+							"parameters": {
+								"audio-file": {
+									"path": "Explosion"
+								},
+								"loop": "not-looping",
+								"volume": "-15",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 248914666917219
@@ -801,6 +815,20 @@
 							"parameters": {
 								"angle": "180"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 346993297991472,
+							"parameters": {
+								"audio-file": {
+									"path": "Explosion"
+								},
+								"loop": "not-looping",
+								"volume": "-15",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 543226252851890
@@ -833,6 +861,20 @@
 					],
 					"actions": [
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 757276717683738,
+							"parameters": {
+								"audio-file": {
+									"path": "MonsterDeath"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "Fireball",
 							"sid": 355108881058502
@@ -843,7 +885,27 @@
 							"sid": 884669594666925
 						}
 					],
-					"sid": 585870812446898
+					"sid": 585870812446898,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "Fireball",
+									"sid": 931957504876651
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Fireball",
+									"sid": 281636666497903
+								}
+							],
+							"sid": 785516063976153
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -858,6 +920,20 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 641248252343953,
+							"parameters": {
+								"audio-file": {
+									"path": "SkeletonHit"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "destroy",
 							"objectClass": "Fireball",
@@ -894,6 +970,20 @@
 									"id": "destroy",
 									"objectClass": "Skeleton",
 									"sid": 737006694057866
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 232574038535774,
+									"parameters": {
+										"audio-file": {
+											"path": "SkeletonDeath"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
 								}
 							],
 							"sid": 352409333624512
