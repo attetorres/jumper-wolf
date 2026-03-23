@@ -1278,7 +1278,13 @@
 					"sid": 413485540560288,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 413485540560288,
 						"expanded": true
@@ -1331,7 +1337,13 @@
 					"sid": 568656087507406,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 568656087507406,
 						"expanded": true

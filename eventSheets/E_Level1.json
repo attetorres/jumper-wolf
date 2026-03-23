@@ -485,6 +485,30 @@
 						}
 					],
 					"sid": 505987968903769
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Wolf",
+							"sid": 771244124007614,
+							"parameters": {
+								"object": "Flag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 632973828209945,
+							"parameters": {
+								"layout": "Win"
+							}
+						}
+					],
+					"sid": 468838710910649
 				}
 			],
 			"sid": 729136370626840

@@ -1,0 +1,10 @@
+{
+	"name": "FinalScoreText",
+	"plugin-id": "Text",
+	"sid": 975304080072000,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}
