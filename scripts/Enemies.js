@@ -81,7 +81,8 @@ function processSkeleton(skeleton, wolf, config, enemyState) {
             wolf.instVars.Life -= 1;
             
             if (wolf.instVars.Life <= 0) {
-                wolf.destroy();
+                 runtime.layout.goToLayout("GameOver");
+                 return;
             }
         }
         return;
@@ -163,8 +164,8 @@ function processEvilEye(eye, wolf, config, enemyState) {
         wolf.instVars.Life -= 1;
         
         if (wolf.instVars.Life <= 0) {
-            wolf.destroy();
-        }
+            runtime.layout.goToLayout("GameOver");
+            return;        }
         
         const direction = eye.x < wolf.x ? -1 : 1;
         wolf.x += direction * 20;

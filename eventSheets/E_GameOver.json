@@ -1,5 +1,30 @@
 {
 	"name": "E_GameOver",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 270571682408121,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 213334943577482,
+					"parameters": {
+						"layout": "Title"
+					}
+				}
+			],
+			"sid": 728598819678497
+		}
+	],
 	"sid": 236788771254962
 }
