@@ -12,26 +12,6 @@
 			"sid": 785110156580128
 		},
 		{
-			"eventType": "variable",
-			"name": "ShootY",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 571397153121938
-		},
-		{
-			"eventType": "variable",
-			"name": "ShootX",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 881509038605093
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Wolf Animations & Controls",
@@ -712,32 +692,13 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 676746552649614,
+					"sid": 865954419447645,
 					"parameters": {
 						"key": 70
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 420733153259189,
-					"parameters": {
-						"variable": "ShootX",
-						"value": "Wolf.X"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 935265823493638,
-					"parameters": {
-						"variable": "ShootY",
-						"value": "Wolf.Y"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 699112207107241,
 			"children": [
 				{
@@ -756,14 +717,13 @@
 					],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 961712108928908,
+							"id": "spawn-another-object",
+							"objectClass": "Wolf",
+							"sid": 810159505177412,
 							"parameters": {
-								"object-to-create": "Fireball",
-								"layer": "0",
-								"x": "ShootX+50",
-								"y": "ShootY",
+								"object": "Fireball",
+								"layer": "\"Game\"",
+								"image-point": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
@@ -805,14 +765,13 @@
 					],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 463552713659282,
+							"id": "spawn-another-object",
+							"objectClass": "Wolf",
+							"sid": 469408935396901,
 							"parameters": {
-								"object-to-create": "Fireball",
-								"layer": "0",
-								"x": "ShootX-50",
-								"y": "ShootY",
+								"object": "Fireball",
+								"layer": "\"Game\"",
+								"image-point": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
@@ -854,11 +813,11 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 664286239769764
+					"sid": 247290276341886
 				}
 			],
 			"actions": [],
-			"sid": 593158788190671,
+			"sid": 808473814442823,
 			"children": [
 				{
 					"eventType": "block",
@@ -866,7 +825,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Fireball",
-							"sid": 795834939739528,
+							"sid": 294414762352692,
 							"parameters": {
 								"object": "Eyeball"
 							}
@@ -876,15 +835,15 @@
 						{
 							"id": "destroy",
 							"objectClass": "Fireball",
-							"sid": 473176893005432
+							"sid": 355108881058502
 						},
 						{
 							"id": "destroy",
 							"objectClass": "Eyeball",
-							"sid": 132456452148424
+							"sid": 884669594666925
 						}
 					],
-					"sid": 888743574786403
+					"sid": 585870812446898
 				},
 				{
 					"eventType": "block",
@@ -892,7 +851,7 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Fireball",
-							"sid": 188435556744507,
+							"sid": 415022520605920,
 							"parameters": {
 								"object": "Skeleton"
 							}
@@ -902,62 +861,64 @@
 						{
 							"id": "destroy",
 							"objectClass": "Fireball",
-							"sid": 338770210048005
+							"sid": 852261737834076
 						},
 						{
 							"id": "subtract-from-instvar",
 							"objectClass": "Skeleton",
-							"sid": 229532268580309,
+							"sid": 794149195490244,
 							"parameters": {
 								"instance-variable": "Life",
 								"value": "1"
 							}
 						}
 					],
-					"sid": 595374742231242
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+					"sid": 584332065346249,
+					"children": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "Skeleton",
-							"sid": 238853856338132,
-							"parameters": {
-								"instance-variable": "Life",
-								"comparison": 0,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Skeleton",
+									"sid": 246622016687359,
+									"parameters": {
+										"instance-variable": "Life",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Skeleton",
+									"sid": 737006694057866
+								}
+							],
+							"sid": 352409333624512
+						},
 						{
-							"id": "destroy",
-							"objectClass": "Skeleton",
-							"sid": 584019461552216
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "Fireball",
+									"sid": 457467061201044
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Fireball",
+									"sid": 635186140142990
+								}
+							],
+							"sid": 744268865325035
 						}
-					],
-					"sid": 167588748165503
+					]
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-outside-layout",
-					"objectClass": "Fireball",
-					"sid": 297395342316105
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Fireball",
-					"sid": 104495958919260
-				}
-			],
-			"sid": 820126909013983
 		}
 	],
 	"sid": 972559811571951
