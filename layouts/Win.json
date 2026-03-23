@@ -148,6 +148,55 @@
 						"z": 0,
 						"angle": 0
 					}
+				},
+				{
+					"type": "Confeti",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 58,
+					"sid": 948767233800933,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 948767233800933,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 553.7394570460665,
+						"y": 54.32757025831312,
+						"width": 8.538891494209485,
+						"height": 16.83334083957589,
+						"originX": 1.8888888888888888,
+						"originY": 4.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 6.19591884457987
+					}
 				}
 			],
 			"sid": 146941912621839,

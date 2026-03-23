@@ -28,7 +28,7 @@
 						{
 							"id": "repeat",
 							"objectClass": "System",
-							"sid": 313540664365733,
+							"sid": 394719432658392,
 							"parameters": {
 								"count": "500"
 							}
@@ -38,11 +38,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 688976618153558,
+							"sid": 996988422881998,
 							"parameters": {
 								"object-to-create": "Confeti",
 								"layer": "0",
-								"x": "random(WindowWidth)",
+								"x": "random(0,LayoutWidth)",
 								"y": "-500",
 								"create-hierarchy": false,
 								"template-name": "\"\""
@@ -51,7 +51,7 @@
 						{
 							"id": "set-angle",
 							"objectClass": "Confeti",
-							"sid": 825790950311046,
+							"sid": 361524163639396,
 							"parameters": {
 								"angle": "random(80, 100)"
 							}
@@ -59,7 +59,7 @@
 						{
 							"id": "set-speed",
 							"objectClass": "Confeti",
-							"sid": 153921415735288,
+							"sid": 123911257440264,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "random(150, 350)"
@@ -68,7 +68,7 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "Confeti",
-							"sid": 261281872261746,
+							"sid": 287954155140408,
 							"parameters": {
 								"opacity": "70"
 							}
@@ -76,15 +76,39 @@
 						{
 							"id": "set-animation-frame",
 							"objectClass": "Confeti",
-							"sid": 159664427583387,
+							"sid": 204559734336822,
 							"parameters": {
 								"frame-number": "random(0,6)"
 							}
 						}
 					],
-					"sid": 903680879580234
+					"sid": 464103790606745
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 130128358980466,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 374506304364575,
+					"parameters": {
+						"layout": "Title"
+					}
+				}
+			],
+			"sid": 842037372991141
 		}
 	],
 	"sid": 757659297153556
