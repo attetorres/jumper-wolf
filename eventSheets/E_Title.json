@@ -1,0 +1,115 @@
+{
+	"name": "E_Title",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 862164291061203
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 343784227355282,
+					"parameters": {
+						"audio-file": {
+							"path": "Memoraphile - Spooky Dungeon"
+						},
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Wolf",
+					"sid": 785111767426334,
+					"parameters": {
+						"scale": "3"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Wolf",
+					"sid": 904839140414028,
+					"parameters": {
+						"animation": "\"IdleRight\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 560466032033705
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 360157878859265,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 683967780324075,
+					"parameters": {
+						"audio-file": {
+							"path": "Intro"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Wolf",
+					"sid": 955982021645089,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "1.4",
+						"end-y": "1.4",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 167085942323963,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 512686799880840,
+					"parameters": {
+						"layout": "Level1"
+					}
+				}
+			],
+			"sid": 556812001823783
+		}
+	],
+	"sid": 541976272468388
+}

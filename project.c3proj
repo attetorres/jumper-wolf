@@ -109,7 +109,9 @@
 			"Heart2",
 			"Heart3",
 			"Fireball",
-			"PopText"
+			"PopText",
+			"TitleText",
+			"PressText"
 		],
 		"subfolders": []
 	},
@@ -123,14 +125,16 @@
 	"layouts": {
 		"items": [
 			"Level1",
-			"GameOver"
+			"GameOver",
+			"Title"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"E_Level1",
-			"E_GameOver"
+			"E_GameOver",
+			"E_Title"
 		],
 		"subfolders": []
 	},
@@ -210,6 +214,14 @@
 					"name": "Eating.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 358572367603682,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Intro.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 184099453849818,
 					"file-info": {
 						"purpose": "none"
 					}

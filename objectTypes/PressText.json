@@ -1,0 +1,10 @@
+{
+	"name": "PressText",
+	"plugin-id": "Text",
+	"sid": 420112978633907,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

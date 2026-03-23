@@ -38,20 +38,6 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 587930725398769,
-							"parameters": {
-								"audio-file": {
-									"path": "Memoraphile - Spooky Dungeon"
-								},
-								"loop": "looping",
-								"volume": "-10",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
-						{
 							"id": "set-instvar-value",
 							"objectClass": "Wolf",
 							"sid": 381546931714883,
