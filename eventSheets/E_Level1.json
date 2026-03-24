@@ -14,521 +14,6 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Wolf Animations & Controls",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 356221883530160
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Wolf",
-							"sid": 137246274007572,
-							"parameters": {
-								"animation": "\"IdleRight\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Wolf",
-							"sid": 381546931714883,
-							"parameters": {
-								"instance-variable": "Mirrored",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 169294031288588
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 984193971525744,
-							"parameters": {
-								"key": 65
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Wolf",
-							"sid": 951254123320324,
-							"parameters": {
-								"animation": "\"WalkingLeft\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "simulate-control",
-							"objectClass": "Wolf",
-							"sid": 924493996975804,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "left"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Wolf",
-							"sid": 673136167099679,
-							"parameters": {
-								"instance-variable": "Mirrored",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 265361671327691
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-released",
-							"objectClass": "Keyboard",
-							"sid": 476450033274318,
-							"parameters": {
-								"key": 65
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Wolf",
-							"sid": 955949022714764,
-							"parameters": {
-								"animation": "\"IdleLeft\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Wolf",
-							"sid": 120493971962621,
-							"parameters": {
-								"instance-variable": "Mirrored",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 719695889561380
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 160456530104033,
-							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Wolf",
-							"sid": 595812456604080,
-							"parameters": {
-								"animation": "\"WalkingRight\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "simulate-control",
-							"objectClass": "Wolf",
-							"sid": 418373831665196,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "right"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Wolf",
-							"sid": 397461895227325,
-							"parameters": {
-								"instance-variable": "Mirrored",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 195808483479369
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-released",
-							"objectClass": "Keyboard",
-							"sid": 347353036956929,
-							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Wolf",
-							"sid": 845979174585464,
-							"parameters": {
-								"animation": "\"IdleRight\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Wolf",
-							"sid": 957285891254640,
-							"parameters": {
-								"instance-variable": "Mirrored",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 686919171530821
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 998877665544332,
-							"parameters": {
-								"key": 32
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "Wolf",
-							"sid": 556677889900112,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "jump"
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 289764461696665,
-							"parameters": {
-								"audio-file": {
-									"path": "Jump"
-								},
-								"loop": "not-looping",
-								"volume": "-10",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						}
-					],
-					"sid": 445566778899003
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Wolf",
-							"sid": 221609813655647,
-							"parameters": {
-								"object": "Coin"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 278712470020110,
-							"parameters": {
-								"audio-file": {
-									"path": "coin"
-								},
-								"loop": "not-looping",
-								"volume": "-10",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Coin",
-							"sid": 421195489145055
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 736265533581306,
-							"parameters": {
-								"variable": "Score",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "ScoreText",
-							"sid": 931560414069618,
-							"parameters": {
-								"text": "\"SCORE:  \" &Score"
-							}
-						}
-					],
-					"sid": 140949818636744
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-y",
-							"objectClass": "Wolf",
-							"sid": 962299055062223,
-							"parameters": {
-								"comparison": 4,
-								"y-co-ordinate": "LayoutHeight+50"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 195105115881374,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Wolf",
-									"sid": 244885699851482,
-									"parameters": {
-										"instance-variable": "IsDead",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Wolf",
-									"sid": 431374209776008,
-									"parameters": {
-										"instance-variable": "IsDead",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Wolf",
-									"sid": 376722233079918,
-									"parameters": {
-										"instance-variable": "Life",
-										"value": "0"
-									}
-								},
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 379456269874975,
-									"parameters": {
-										"audio-file": {
-											"path": "WolfDeath"
-										},
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"\""
-									}
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 481647191495831,
-									"parameters": {
-										"layout": "GameOver"
-									}
-								}
-							],
-							"sid": 901548212605942
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Wolf",
-							"sid": 366623258167708,
-							"parameters": {
-								"object": "Chicken"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 984560676831346,
-							"parameters": {
-								"audio-file": {
-									"path": "Eating"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Chicken",
-							"sid": 982173898329411
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 138017560651904,
-							"parameters": {
-								"variable": "Score",
-								"value": "10"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "ScoreText",
-							"sid": 723836883900841,
-							"parameters": {
-								"text": "\"SCORE:  \" &Score"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 514162963712833,
-							"parameters": {
-								"object-to-create": "PopText",
-								"layer": "1",
-								"x": "Chicken.X+20",
-								"y": "Chicken.Y+10",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "PopText",
-							"sid": 323853377799932,
-							"parameters": {
-								"text": "\"+10\""
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "PopText",
-							"sid": 686122452956200,
-							"parameters": {
-								"opacity": "100"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "PopText",
-							"sid": 267866528199860,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "PopText",
-							"sid": 653645168328104,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetY",
-								"end-value": "Chicken.Y+50",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 199337250823285,
-							"parameters": {
-								"seconds": "0.5",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "PopText",
-							"sid": 206742403536500
-						}
-					],
-					"sid": 505987968903769
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Wolf",
-							"sid": 771244124007614,
-							"parameters": {
-								"object": "Flag"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 632973828209945,
-							"parameters": {
-								"layout": "Win"
-							}
-						}
-					],
-					"sid": 468838710910649
-				}
-			],
-			"sid": 729136370626840
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
 			"title": "Enemies Animations",
 			"description": "",
 			"isActiveOnStart": true,
@@ -543,460 +28,10 @@
 						}
 					],
 					"actions": [],
-					"sid": 172877264046322,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Skeleton",
-									"sid": 454996800060594,
-									"parameters": {
-										"instance-variable": "State",
-										"comparison": 0,
-										"value": "\"idle\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "Skeleton",
-									"sid": 819956212834426,
-									"parameters": {
-										"animation": "\"Idle\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 565108858129750
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Skeleton",
-									"sid": 309704476181218,
-									"parameters": {
-										"instance-variable": "State",
-										"comparison": 0,
-										"value": "\"walk\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "Skeleton",
-									"sid": 872354367398827,
-									"parameters": {
-										"animation": "\"Walking\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 332475963062058
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Skeleton",
-									"sid": 754890292957253,
-									"parameters": {
-										"instance-variable": "State",
-										"comparison": 0,
-										"value": "\"attack\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "Skeleton",
-									"sid": 339161710397000,
-									"parameters": {
-										"animation": "\"Attack\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 849628047242319
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Skeleton",
-									"sid": 868841970001122,
-									"parameters": {
-										"instance-variable": "State",
-										"comparison": 0,
-										"value": "\"dead\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "Skeleton",
-									"sid": 966775788549219,
-									"parameters": {
-										"animation": "\"Death\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 951943297083226
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "Skeleton",
-									"sid": 140455634018764,
-									"parameters": {
-										"comparison": 2,
-										"x-co-ordinate": "Wolf.X"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-mirrored",
-									"objectClass": "Skeleton",
-									"sid": 931368313323425,
-									"parameters": {
-										"state": "not-mirrored"
-									}
-								}
-							],
-							"sid": 698004256904112
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 276129565084631
-								}
-							],
-							"actions": [
-								{
-									"id": "set-mirrored",
-									"objectClass": "Skeleton",
-									"sid": 842439378983051,
-									"parameters": {
-										"state": "mirrored"
-									}
-								}
-							],
-							"sid": 151645015548801
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "Eyeball",
-									"sid": 468267408746074,
-									"parameters": {
-										"comparison": 2,
-										"x-co-ordinate": "Wolf.X"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-mirrored",
-									"objectClass": "Eyeball",
-									"sid": 852405226472357,
-									"parameters": {
-										"state": "mirrored"
-									}
-								}
-							],
-							"sid": 151869693037813
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 239671014047559
-								}
-							],
-							"actions": [
-								{
-									"id": "set-mirrored",
-									"objectClass": "Eyeball",
-									"sid": 476801920576667,
-									"parameters": {
-										"state": "not-mirrored"
-									}
-								}
-							],
-							"sid": 263930438873657
-						}
-					]
+					"sid": 172877264046322
 				}
 			],
 			"sid": 276873675453540
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Life",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 434397458303455
-						}
-					],
-					"actions": [],
-					"sid": 751264786231255,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Wolf",
-									"sid": 222063600585293,
-									"parameters": {
-										"instance-variable": "Life",
-										"comparison": 5,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Heart",
-									"sid": 578149078374917,
-									"parameters": {
-										"frame-number": "0"
-									}
-								}
-							],
-							"sid": 631557296634022
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 373721152872928
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Heart",
-									"sid": 421990003483972,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 754541894375857
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Wolf",
-									"sid": 975876749488470,
-									"parameters": {
-										"instance-variable": "Life",
-										"comparison": 5,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Heart2",
-									"sid": 366609993514542,
-									"parameters": {
-										"frame-number": "0"
-									}
-								}
-							],
-							"sid": 354451552305650
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 629816558391086
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Heart2",
-									"sid": 550350878127565,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 663042686931738
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Wolf",
-									"sid": 333401263664610,
-									"parameters": {
-										"instance-variable": "Life",
-										"comparison": 5,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Heart3",
-									"sid": 151756990944893,
-									"parameters": {
-										"frame-number": "0"
-									}
-								}
-							],
-							"sid": 604344005756190
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 402571125943877
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Heart3",
-									"sid": 375022425752732,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 361038537102936
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 188452009961615
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Wolf",
-							"sid": 706163735602948,
-							"parameters": {
-								"instance-variable": "Life",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 297343851898763,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Wolf",
-									"sid": 719946720662973,
-									"parameters": {
-										"instance-variable": "IsDead",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Wolf",
-									"sid": 421054775942444,
-									"parameters": {
-										"instance-variable": "IsDead",
-										"value": "1"
-									}
-								},
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 778165613736767,
-									"parameters": {
-										"audio-file": {
-											"path": "WolfDeath"
-										},
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"\""
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 876168447380434,
-									"parameters": {
-										"seconds": "0.5",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 316622992687805,
-									"parameters": {
-										"layout": "GameOver"
-									}
-								}
-							],
-							"sid": 633765605398612
-						}
-					]
-				}
-			],
-			"sid": 570745646880837
 		},
 		{
 			"eventType": "block",
@@ -1384,8 +419,931 @@
 							"sid": 744268865325035
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Wolf",
+							"sid": 222063600585293,
+							"parameters": {
+								"instance-variable": "Life",
+								"comparison": 5,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Heart",
+							"sid": 578149078374917,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 631557296634022
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 373721152872928
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Heart",
+							"sid": 421990003483972,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 754541894375857
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Wolf",
+							"sid": 975876749488470,
+							"parameters": {
+								"instance-variable": "Life",
+								"comparison": 5,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Heart2",
+							"sid": 366609993514542,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 354451552305650
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 629816558391086
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Heart2",
+							"sid": 550350878127565,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 663042686931738
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Wolf",
+							"sid": 333401263664610,
+							"parameters": {
+								"instance-variable": "Life",
+								"comparison": 5,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Heart3",
+							"sid": 151756990944893,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 604344005756190
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 402571125943877
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Heart3",
+							"sid": 375022425752732,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 361038537102936
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Wolf",
+							"sid": 706163735602948,
+							"parameters": {
+								"instance-variable": "Life",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 297343851898763,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Wolf",
+									"sid": 719946720662973,
+									"parameters": {
+										"instance-variable": "IsDead",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Wolf",
+									"sid": 421054775942444,
+									"parameters": {
+										"instance-variable": "IsDead",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 778165613736767,
+									"parameters": {
+										"audio-file": {
+											"path": "WolfDeath"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 876168447380434,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 316622992687805,
+									"parameters": {
+										"layout": "GameOver"
+									}
+								}
+							],
+							"sid": 633765605398612
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Skeleton",
+							"sid": 454996800060594,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"idle\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Skeleton",
+							"sid": 819956212834426,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 565108858129750
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Skeleton",
+							"sid": 309704476181218,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"walk\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Skeleton",
+							"sid": 872354367398827,
+							"parameters": {
+								"animation": "\"Walking\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 332475963062058
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Skeleton",
+							"sid": 754890292957253,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"attack\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Skeleton",
+							"sid": 339161710397000,
+							"parameters": {
+								"animation": "\"Attack\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 849628047242319
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Skeleton",
+							"sid": 868841970001122,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"dead\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Skeleton",
+							"sid": 966775788549219,
+							"parameters": {
+								"animation": "\"Death\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 951943297083226
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Skeleton",
+							"sid": 140455634018764,
+							"parameters": {
+								"comparison": 2,
+								"x-co-ordinate": "Wolf.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Skeleton",
+							"sid": 931368313323425,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 698004256904112
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 276129565084631
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Skeleton",
+							"sid": 842439378983051,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 151645015548801
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Eyeball",
+							"sid": 468267408746074,
+							"parameters": {
+								"comparison": 2,
+								"x-co-ordinate": "Wolf.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Eyeball",
+							"sid": 852405226472357,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 151869693037813
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 239671014047559
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Eyeball",
+							"sid": 476801920576667,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 263930438873657
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 356221883530160
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Wolf",
+					"sid": 137246274007572,
+					"parameters": {
+						"animation": "\"IdleRight\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Wolf",
+					"sid": 381546931714883,
+					"parameters": {
+						"instance-variable": "Mirrored",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 169294031288588
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 984193971525744,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Wolf",
+					"sid": 951254123320324,
+					"parameters": {
+						"animation": "\"WalkingLeft\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "Wolf",
+					"sid": 924493996975804,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Wolf",
+					"sid": 673136167099679,
+					"parameters": {
+						"instance-variable": "Mirrored",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 265361671327691
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 476450033274318,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Wolf",
+					"sid": 955949022714764,
+					"parameters": {
+						"animation": "\"IdleLeft\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Wolf",
+					"sid": 120493971962621,
+					"parameters": {
+						"instance-variable": "Mirrored",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 719695889561380
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 160456530104033,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Wolf",
+					"sid": 595812456604080,
+					"parameters": {
+						"animation": "\"WalkingRight\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "Wolf",
+					"sid": 418373831665196,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Wolf",
+					"sid": 397461895227325,
+					"parameters": {
+						"instance-variable": "Mirrored",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 195808483479369
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 347353036956929,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Wolf",
+					"sid": 845979174585464,
+					"parameters": {
+						"animation": "\"IdleRight\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Wolf",
+					"sid": 957285891254640,
+					"parameters": {
+						"instance-variable": "Mirrored",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 686919171530821
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 998877665544332,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Wolf",
+					"sid": 556677889900112,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "jump"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 289764461696665,
+					"parameters": {
+						"audio-file": {
+							"path": "Jump"
+						},
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 445566778899003
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Wolf",
+					"sid": 221609813655647,
+					"parameters": {
+						"object": "Coin"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 278712470020110,
+					"parameters": {
+						"audio-file": {
+							"path": "coin"
+						},
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Coin",
+					"sid": 421195489145055
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 736265533581306,
+					"parameters": {
+						"variable": "Score",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText",
+					"sid": 931560414069618,
+					"parameters": {
+						"text": "\"SCORE:  \" &Score"
+					}
+				}
+			],
+			"sid": 140949818636744
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Wolf",
+					"sid": 962299055062223,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "LayoutHeight+50"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 195105115881374,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Wolf",
+							"sid": 244885699851482,
+							"parameters": {
+								"instance-variable": "IsDead",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Wolf",
+							"sid": 431374209776008,
+							"parameters": {
+								"instance-variable": "IsDead",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Wolf",
+							"sid": 376722233079918,
+							"parameters": {
+								"instance-variable": "Life",
+								"value": "0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 379456269874975,
+							"parameters": {
+								"audio-file": {
+									"path": "WolfDeath"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 481647191495831,
+							"parameters": {
+								"layout": "GameOver"
+							}
+						}
+					],
+					"sid": 901548212605942
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Wolf",
+					"sid": 366623258167708,
+					"parameters": {
+						"object": "Chicken"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 984560676831346,
+					"parameters": {
+						"audio-file": {
+							"path": "Eating"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Chicken",
+					"sid": 982173898329411
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 138017560651904,
+					"parameters": {
+						"variable": "Score",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText",
+					"sid": 723836883900841,
+					"parameters": {
+						"text": "\"SCORE:  \" &Score"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 514162963712833,
+					"parameters": {
+						"object-to-create": "PopText",
+						"layer": "1",
+						"x": "Chicken.X+20",
+						"y": "Chicken.Y+10",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PopText",
+					"sid": 323853377799932,
+					"parameters": {
+						"text": "\"+10\""
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "PopText",
+					"sid": 686122452956200,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "PopText",
+					"sid": 267866528199860,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "PopText",
+					"sid": 653645168328104,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetY",
+						"end-value": "Chicken.Y+50",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 199337250823285,
+					"parameters": {
+						"seconds": "0.5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "PopText",
+					"sid": 206742403536500
+				}
+			],
+			"sid": 505987968903769
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Wolf",
+					"sid": 771244124007614,
+					"parameters": {
+						"object": "Flag"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 632973828209945,
+					"parameters": {
+						"layout": "Win"
+					}
+				}
+			],
+			"sid": 468838710910649
 		}
 	],
 	"sid": 972559811571951
