@@ -99,7 +99,7 @@
 				{
 					"type": "FinaMssg",
 					"properties": {
-						"text": "YOU REACHED THE FLAG!\nPRESS F TO PLAY AGAIN",
+						"text": "YOU'VE REACHED THE FLAG!\nPRESS F TO PLAY AGAIN",
 						"enable-bbcode": true,
 						"font": "fantasy",
 						"size": 25,
@@ -133,9 +133,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 179,
+						"x": 161,
 						"y": 138,
-						"width": 316,
+						"width": 351,
 						"height": 87,
 						"originX": 0,
 						"originY": 0,

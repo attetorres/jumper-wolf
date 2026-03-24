@@ -224,6 +224,20 @@
 							"parameters": {
 								"control": "jump"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 289764461696665,
+							"parameters": {
+								"audio-file": {
+									"path": "Jump"
+								},
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 445566778899003
@@ -1005,9 +1019,9 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Wolf",
-							"sid": 738866588379980,
+							"sid": 194539609936317,
 							"parameters": {
-								"instance-variable": "Mirrored",
+								"instance-variable": "FireballCoolDown",
 								"comparison": 0,
 								"value": "0"
 							}
@@ -1015,121 +1029,186 @@
 					],
 					"actions": [
 						{
-							"id": "spawn-another-object",
+							"id": "set-instvar-value",
 							"objectClass": "Wolf",
-							"sid": 810159505177412,
+							"sid": 122286319706653,
 							"parameters": {
-								"object": "Fireball",
-								"layer": "\"Game\"",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "Fireball",
-							"sid": 234151124390759,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"speed": "500"
-							}
-						},
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "Fireball",
-							"sid": 678367198950443,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "0"
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 392913686059006,
-							"parameters": {
-								"audio-file": {
-									"path": "Explosion"
-								},
-								"loop": "not-looping",
-								"volume": "-15",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						}
-					],
-					"sid": 248914666917219
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Wolf",
-							"sid": 194452278729552,
-							"parameters": {
-								"instance-variable": "Mirrored",
-								"comparison": 0,
+								"instance-variable": "FireballCoolDown",
 								"value": "1"
 							}
 						}
 					],
-					"actions": [
+					"sid": 681224685162067,
+					"children": [
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Wolf",
-							"sid": 469408935396901,
-							"parameters": {
-								"object": "Fireball",
-								"layer": "\"Game\"",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-mirrored",
-							"objectClass": "Fireball",
-							"sid": 891009447156932,
-							"parameters": {
-								"state": "mirrored"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "Fireball",
-							"sid": 230680586748504,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"speed": "500"
-							}
-						},
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "Fireball",
-							"sid": 773059549702295,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "180"
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 346993297991472,
-							"parameters": {
-								"audio-file": {
-									"path": "Explosion"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Wolf",
+									"sid": 397906542626405,
+									"parameters": {
+										"instance-variable": "Mirrored",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Wolf",
+									"sid": 867538858131188,
+									"parameters": {
+										"object": "Fireball",
+										"layer": "\"Game\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
 								},
-								"loop": "not-looping",
-								"volume": "-15",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
+								{
+									"id": "set-speed",
+									"objectClass": "Fireball",
+									"sid": 582720566267050,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "Fireball",
+									"sid": 486522538605463,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 100203877398338,
+									"parameters": {
+										"audio-file": {
+											"path": "Explosion"
+										},
+										"loop": "not-looping",
+										"volume": "-15",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 130978742244778,
+									"parameters": {
+										"seconds": "0.8",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Wolf",
+									"sid": 657656887082219,
+									"parameters": {
+										"instance-variable": "FireballCoolDown",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 712799063606552
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Wolf",
+									"sid": 690459302614073,
+									"parameters": {
+										"instance-variable": "Mirrored",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Wolf",
+									"sid": 746328310930263,
+									"parameters": {
+										"object": "Fireball",
+										"layer": "\"Game\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "Fireball",
+									"sid": 580324115093192,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Fireball",
+									"sid": 802035331445257,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "500"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "Fireball",
+									"sid": 509778665519153,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 434610921453975,
+									"parameters": {
+										"audio-file": {
+											"path": "Explosion"
+										},
+										"loop": "not-looping",
+										"volume": "-15",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 790561218764294,
+									"parameters": {
+										"seconds": "0.8",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Wolf",
+									"sid": 847591287284695,
+									"parameters": {
+										"instance-variable": "FireballCoolDown",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 586973154348869
 						}
-					],
-					"sid": 543226252851890
+					]
 				}
 			]
 		},

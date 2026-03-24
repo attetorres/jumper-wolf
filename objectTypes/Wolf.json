@@ -25,6 +25,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 140957169919635
+		},
+		{
+			"name": "FireballCoolDown",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 138727262853770
 		}
 	],
 	"behaviorTypes": [
