@@ -79,6 +79,12 @@ function processSkeleton(skeleton, wolf, config, enemyState) {
         if (skeleton.animationFrame === totalFrames - 1 && now - state.lastAttack > config.attackCooldown) {
             state.lastAttack = now;
             wolf.instVars.Life -= 1;
+
+        const audio = runtime.objects.Audio?.getFirstInstance();
+        if (audio) {
+            audio.playSound("WolfHit", false);
+        } 
+        
             
             if (wolf.instVars.Life <= 0) {
                  runtime.layout.goToLayout("GameOver");
@@ -162,6 +168,11 @@ function processEvilEye(eye, wolf, config, enemyState) {
     if (eye.testOverlap(wolf) && now - data.lastDamage > 1000) {
         data.lastDamage = now;
         wolf.instVars.Life -= 1;
+
+        const audio = runtime.objects.Audio?.getFirstInstance();
+        if (audio) {
+            audio.playSound("WolfHit", false);
+        } 
         
         if (wolf.instVars.Life <= 0) {
             runtime.layout.goToLayout("GameOver");
